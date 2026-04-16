@@ -42,10 +42,6 @@ lerna-debug.log*
 .env.production.local
 .env.local
 
-# --- SEGURANÇA DO BLOG PESSOAL ---
-# Ignora o arquivo que contém a chave secreta do JWT
-src/auth/constants/constants.ts
-
 # temp directory
 .temp
 .tmp
