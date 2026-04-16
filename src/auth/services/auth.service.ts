@@ -4,7 +4,6 @@ import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { Bcrypt } from '../bcrypt/bcrypt';
 import { UsuarioLogin } from '../entities/usuariologin.entity';
 
-
 @Injectable()
 export class AuthService{
     constructor(
@@ -46,8 +45,7 @@ export class AuthService{
             usuario: usuarioLogin.usuario,
             senha: '',
             foto: buscaUsuario.foto,
-            token: `Bearer ${this.jwtService.sign(payload)}`,
+            token: this.jwtService.sign(payload)}
         }
 
     }
-}
