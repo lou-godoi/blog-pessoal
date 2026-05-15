@@ -9,12 +9,11 @@ import { jwtConstants } from './constants/constants';
 
 @Module({
   imports: [
-    // Usando forwardRef aqui também para fechar o circuito
     forwardRef(() => UsuarioModule),
     PassportModule,
 
 JwtModule.register({
-  secret: jwtConstants.secret, // <--- AQUI ESTÁ O SEGREDO! Use a constante, não a string manual.
+  secret: jwtConstants.secret,
   signOptions: { expiresIn: '1h' },
 }),
   ],
