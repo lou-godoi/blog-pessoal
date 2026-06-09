@@ -25,7 +25,7 @@ export class UsuarioController {
         return this.usuarioService.create(usuario);
     }
 
-    @Post('/logar') // Pública - É aqui que você pega o Token
+    @Post('/logar') // Pública - É aqui que pega o Token
     @HttpCode(HttpStatus.OK)
     login(@Body() usuarioLogin: UsuarioLogin): Promise<any> {
         return this.authService.login(usuarioLogin);

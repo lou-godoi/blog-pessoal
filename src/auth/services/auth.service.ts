@@ -39,10 +39,10 @@ export class AuthService {
         if (!buscaUsuario)
             throw new HttpException('Usuário e/ou senha inválidos!', HttpStatus.UNAUTHORIZED)
 
-        // 3. O FEITIÇO DE PROTEÇÃO ESTÁ AQUI: Confere se a senha digitada bate com a do banco
+        // 3. confere se a senha digitada bate com a do banco
         const matchPassword = await this.bcrypt.compararSenhas(usuarioLogin.senha, buscaUsuario.senha)
 
-        // 4. Se a senha for diferente (false), barra também!
+        // 4. Se a senha for diferente (false), barra também
         if (!matchPassword)
             throw new HttpException('Usuário e/ou senha inválidos!', HttpStatus.UNAUTHORIZED)
 
